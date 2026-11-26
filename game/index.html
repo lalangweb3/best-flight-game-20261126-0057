@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THERMAL SOAR — 9 thermals, 5 ridges, 3 strips, 0 fuel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game-canvas" width="1280" height="480"></canvas>
+  <div id="hud">
+    <div class="hud-panel" id="hud-left">
+      <span>ALT <b id="hud-alt">0</b> m</span>
+      <span>SPD <b id="hud-spd">0</b> km/h</span>
+      <span>V/S <b id="hud-vs">0.0</b> m/s</span>
+    </div>
+    <div class="hud-panel" id="hud-mid">
+      <span id="hud-leg">LEG 1/7</span>
+      <span id="hud-event">—</span>
+    </div>
+    <div class="hud-panel" id="hud-right">
+      <span>SCORE <b id="hud-score">0</b></span>
+      <span>SUNSET <b id="hud-time">10:00</b></span>
+      <span>FEATS <b id="hud-feats">0/18</b></span>
+    </div>
+  </div>
+  <div id="hud-lift"></div>
+  <div id="hud-msg"></div>
+  <div id="toast"></div>
+  <div id="title-screen" class="overlay">
+    <div class="panel">
+      <h1>THERMAL SOAR</h1>
+      <p class="tagline">Ride rising air over <b>9 thermals</b>, <b>5 ridge lines</b> and <b>3 grass strips</b> — <b>0 fuel</b>, <b>1 tow launch</b>, <b>7 legs</b> to the sunset.</p>
+      <p class="sub">Altitude is your only fuel. Circle thermals to climb, ride ridges, land on grass strips — and beat Vega's 2500 on the final leg before the sun sets.</p>
+      <p class="controls">W/S or ↑/↓ pitch &nbsp;·&nbsp; A/D or ←/→ circle a thermal &nbsp;·&nbsp; SPACE airbrake &nbsp;·&nbsp; Click toggles circle &nbsp;·&nbsp; M mute</p>
+      <button id="start-btn">START FLYING</button>
+      <p class="fine">6 fellow pilots · 12 refits · 18 feats · 5 named weather events</p>
+    </div>
+  </div>
+  <div id="refit-screen" class="overlay hidden">
+    <div class="panel">
+      <h2 id="refit-title">Leg complete!</h2>
+      <p id="refit-score"></p>
+      <p>Choose one refit:</p>
+      <div id="refit-cards"></div>
+    </div>
+  </div>
+  <div id="end-screen" class="overlay hidden">
+    <div class="panel">
+      <h2 id="end-title"></h2>
+      <p id="end-score"></p>
+      <p id="end-feats"></p>
+      <button id="restart-btn">FLY AGAIN</button>
+    </div>
+  </div>
+</div>
+<script type="module">
+  import { bootGame } from './game.js';
+  bootGame('game-canvas');
+</script>
+</body>
+</html>
